@@ -1,0 +1,5 @@
+# Python 运行产生的本地缓存与虚拟环境
+__pycache__/
+*.py[cod]
+.venv/
+venv/
