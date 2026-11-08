@@ -1,0 +1,25 @@
+{
+  "source_url": "https://www.ssga.com/library-content/products/fund-data/etfs/us/navhist-us-en-spy.xlsx",
+  "raw_file": "data/raw/ssga/spy_nav_2026-11-08.xlsx",
+  "raw_sha256": "7aa8414e1cc8ab09f1fe20c321f5c87493c81b32936154f80db40b350286a683",
+  "raw_file_mtime_utc_after_download": "2026-11-08T13:22:36.034458+00:00",
+  "prepared_at_utc": "2026-11-08T13:24:51.309251+00:00",
+  "python_version": "3.14.6",
+  "ticker": "SPY",
+  "sheet": "navhist",
+  "source_columns": "A=Date,B=NAV",
+  "sample_start": "2024-01-02",
+  "sample_end": "2024-01-08",
+  "sample_file": "data/derived/spy_nav_2024-01-02_2024-01-08.csv",
+  "sample_sha256": "5733995580fe14cb66e45148ed4aa26c28e4ecc86fe36201a5173268b518cdec",
+  "row_count": 5,
+  "source_rows": [
+    715,
+    716,
+    717,
+    718,
+    719
+  ],
+  "price_basis": "Published NAV per share in USD; not exchange close or total return",
+  "treatment": "Normalize dates only; preserve source NAV and order; no filling/deleting"
+}

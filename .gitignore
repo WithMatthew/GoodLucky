@@ -4,9 +4,21 @@ __pycache__/
 .venv/
 venv/
 
-# 行情数据与缓存默认留在本地，仅保留明确可公开的微型教学样本。
+# 数据默认留在本地；需要随仓库同步的教学文件逐项放行。
 /data/*
 !/data/synthetic/
 /data/synthetic/*
 !/data/synthetic/README.md
 !/data/synthetic/daily_demo.csv
+
+# SPY 教学快照：原始文件、衍生样本和来源元数据一起同步。
+# 必须逐层放行父目录，否则 Git 不会检查目录内的文件例外。
+!/data/raw/
+/data/raw/*
+!/data/raw/ssga/
+/data/raw/ssga/*
+!/data/raw/ssga/spy_nav_2026-11-08.xlsx
+!/data/derived/
+/data/derived/*
+!/data/derived/spy_nav_2024-01-02_2024-01-08.csv
+!/data/derived/spy_nav_2024-01-02_2024-01-08.metadata.json

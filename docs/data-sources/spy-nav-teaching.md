@@ -7,7 +7,7 @@
 - 标的：SPY，State Street SPDR S&P 500 ETF Trust；选择用于读取、日期和数据口径教学，不作买入建议，也不自动确定后续策略池。
 - 来源：[发行人官方产品页](https://www.ssga.com/us/en/institutional/etfs/state-street-spdr-sp-500-etf-trust-spy)的“Most Recent NAV / NAV History”公开下载链接。
 - 原文件URL：<https://www.ssga.com/library-content/products/fund-data/etfs/us/navhist-us-en-spy.xlsx>。
-- 获取情况：无需登录、API密钥或付款，已成功下载278814字节。保留本地学习，不推定免费公开下载意味着可以再分发；原始和衍生数据均由现有.gitignore排除。
+- 获取情况：无需登录、API密钥或付款，已成功下载278814字节。按用户的数据同步要求，现有.gitignore已显式放行本次原始快照、衍生CSV和元数据，可通过普通git add纳入版本管理；不推定免费公开下载意味着获得再分发许可。
 - 原始文件：`data/raw/ssga/spy_nav_2026-11-08.xlsx`，未编辑；文件下载完成后的修改时间为2026-11-08T13:22:36.034458+00:00（北京时间21:22:36）。此为获取时间记录，不是行情发生或发布时点。
 - SHA-256：`7aa8414e1cc8ab09f1fe20c321f5c87493c81b32936154f80db40b350286a683`。以本地快照和校验值固定版本；官方同一URL未来可能更新。
 - 预先固定课堂窗口：2024-01-02至2024-01-08，按短时间窗口选择，非按表现筛选。从navhist工作表A715:B719提取五行，原顺序为日期倒序。
@@ -44,6 +44,6 @@ python -X utf8 -B -m unittest discover -s tests -p test_nav_sample.py -v
 
 已执行：提取5行，原始文件哈希前后相同；日期升序输出01-02/03/04/05/08，无重复日期和空白净值。5项确定测试通过：排序/缺值/原输入保持、非法日期与格式拒绝、周末日期仍可解析、完全重复和冲突均报告且不删除、非有限或非正净值拒绝。
 
-需要重新获取时，从上述官方链接另存新快照，不覆盖本次快照。来源URL可按官方页重新核验；不同快照结果及SHA-256可能不同。真实数据文件不提交版本库，换设备需要另行携带快照或重新下载并记录版本。
+需要重新获取时，从上述官方链接另存新快照，不覆盖本次快照。来源URL可按官方页重新核验；不同快照结果及SHA-256可能不同。本次原始快照、衍生CSV和元数据已在.gitignore中放行，提交并推送后即可随仓库在设备间同步；具体命令见[仓库说明](../../README.md#数据的-git-追踪与-github-同步)。新增快照仍需单独添加放行规则，并记录对应版本。
 
 技术参考：[Python date.fromisoformat](https://docs.python.org/3.11/library/datetime.html#datetime.date.fromisoformat)，2026-11-08核验其日期转换与有效性约束；项目函数额外要求规范YYYY-MM-DD。Python date本身不判断交易所是否开市。
