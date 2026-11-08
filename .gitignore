@@ -3,3 +3,10 @@ __pycache__/
 *.py[cod]
 .venv/
 venv/
+
+# 行情数据与缓存默认留在本地，仅保留明确可公开的微型教学样本。
+/data/*
+!/data/synthetic/
+/data/synthetic/*
+!/data/synthetic/README.md
+!/data/synthetic/daily_demo.csv
