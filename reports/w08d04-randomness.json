@@ -1,0 +1,51 @@
+{
+    "data_kind":  "SIMULATED_EDUCATIONAL_ONLY",
+    "python_version":  "3.14.6",
+    "model":  "independent equal up/down 1% daily; identical candidates; theoretical daily mean 0%",
+    "generator":  "local random.Random; random()\u003c0.5 gives -0.01, otherwise +0.01",
+    "metric":  "arithmetic daily mean; decimal returns; distance explicitly in percentage points; not annualized",
+    "sample_size":  {
+                        "seed":  20261115,
+                        "repetitions":  1000,
+                        "short_days":  10,
+                        "long_days":  100,
+                        "model_daily_mean":  0,
+                        "short_average_distance_from_zero_pp":  0.2382,
+                        "long_average_distance_from_zero_pp":  0.0746,
+                        "long_farther_from_zero_count":  241,
+                        "first_path_daily_means_decimal":  [
+                                                               0,
+                                                               0.0018
+                                                           ]
+                    },
+    "selection":  {
+                      "seed":  20261116,
+                      "candidates":  100,
+                      "selection_days":  20,
+                      "followup_days":  100,
+                      "selection_rule":  "highest arithmetic mean; ties: lowest candidate ID",
+                      "preselected_candidate":  {
+                                                    "candidate_id":  1,
+                                                    "selection_up_days":  11,
+                                                    "selection_daily_mean_decimal":  0.001,
+                                                    "followup_up_days":  64,
+                                                    "followup_daily_mean_decimal":  0.0028
+                                                },
+                      "selected_winner":  {
+                                              "candidate_id":  68,
+                                              "selection_up_days":  15,
+                                              "selection_daily_mean_decimal":  0.005,
+                                              "followup_up_days":  52,
+                                              "followup_daily_mean_decimal":  0.0004
+                                          }
+                  },
+    "recorded_on":  "2026-11-15",
+    "code_files":  [
+                       "src/random_winners.py",
+                       "tests/test_random_winners.py"
+                   ],
+    "code_sha256":  {
+                        "src/random_winners.py":  "7c63f8b6906b89b04bc1c680029fcf9a15c33b01ac7be92ab20d4310d3b51e83",
+                        "tests/test_random_winners.py":  "ce5cf74bc1a81e665598fd5bca16088ab011b1a980d987fdbd72d09cbb40de86"
+                    }
+}
