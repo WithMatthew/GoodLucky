@@ -1,0 +1,325 @@
+{
+  "study_id": "etf-research-v1",
+  "started_at_utc": "2026-11-14T06:35:30.484877+00:00",
+  "python_version": "3.12.14",
+  "tzdata_version": "2026.6",
+  "status": "sealed_for_teaching",
+  "snapshots": [
+    {
+      "symbol": "SPY",
+      "partition": "development",
+      "requested_bounds": {
+        "start": "2020-01-01",
+        "end": "2024-12-31"
+      },
+      "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/SPY?period1=1577854800&period2=1735707600&interval=1d&events=div%2Csplits%2CcapitalGains&includePrePost=false&includeAdjustedClose=true",
+      "downloaded_at_utc": "2026-11-14T06:35:32.620710+00:00",
+      "raw": {
+        "path": "data/raw/yahoo/etf-research-v1/development/SPY.json",
+        "sha256": "0d9c22018283244a866dae8ebbd155c8936b6c4d0690ef9bc8b747fd5561aab9",
+        "bytes": 138752
+      },
+      "derived": {
+        "path": "data/derived/etf-research-v1/development/SPY.csv",
+        "sha256": "2e607bad85760563195a6a2116300413104c3d33f2e1c328a95c20ed41804ea2",
+        "bytes": 136581
+      },
+      "quality": {
+        "expected_rows": 1258,
+        "actual_rows": 1258,
+        "unique_dates": 1258,
+        "missing_date_count": 0,
+        "unexpected_date_count": 0,
+        "duplicate_date_count": 0,
+        "extra_duplicate_rows": 0,
+        "out_of_order_pairs": 0,
+        "missing_values": {
+          "open": 0,
+          "high": 0,
+          "low": 0,
+          "close": 0,
+          "adj_close": 0,
+          "volume": 0
+        },
+        "invalid_values": {
+          "open": 0,
+          "high": 0,
+          "low": 0,
+          "close": 0,
+          "adj_close": 0,
+          "volume": 0
+        },
+        "passed": true,
+        "ohlc_order_failures": 0
+      }
+    },
+    {
+      "symbol": "DIA",
+      "partition": "development",
+      "requested_bounds": {
+        "start": "2020-01-01",
+        "end": "2024-12-31"
+      },
+      "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/DIA?period1=1577854800&period2=1735707600&interval=1d&events=div%2Csplits%2CcapitalGains&includePrePost=false&includeAdjustedClose=true",
+      "downloaded_at_utc": "2026-11-14T06:35:34.567256+00:00",
+      "raw": {
+        "path": "data/raw/yahoo/etf-research-v1/development/DIA.json",
+        "sha256": "19b9509bfdcc535c174155808edb453a440710d903225cfdf852222aabcb70c9",
+        "bytes": 139484
+      },
+      "derived": {
+        "path": "data/derived/etf-research-v1/development/DIA.csv",
+        "sha256": "7baed1a4326a07c3466d2b9ea74d13bec767b2ad890993b616c99149cb346f81",
+        "bytes": 135378
+      },
+      "quality": {
+        "expected_rows": 1258,
+        "actual_rows": 1258,
+        "unique_dates": 1258,
+        "missing_date_count": 0,
+        "unexpected_date_count": 0,
+        "duplicate_date_count": 0,
+        "extra_duplicate_rows": 0,
+        "out_of_order_pairs": 0,
+        "missing_values": {
+          "open": 0,
+          "high": 0,
+          "low": 0,
+          "close": 0,
+          "adj_close": 0,
+          "volume": 0
+        },
+        "invalid_values": {
+          "open": 0,
+          "high": 0,
+          "low": 0,
+          "close": 0,
+          "adj_close": 0,
+          "volume": 0
+        },
+        "passed": true,
+        "ohlc_order_failures": 0
+      }
+    },
+    {
+      "symbol": "QQQ",
+      "partition": "development",
+      "requested_bounds": {
+        "start": "2020-01-01",
+        "end": "2024-12-31"
+      },
+      "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/QQQ?period1=1577854800&period2=1735707600&interval=1d&events=div%2Csplits%2CcapitalGains&includePrePost=false&includeAdjustedClose=true",
+      "downloaded_at_utc": "2026-11-14T06:35:36.351134+00:00",
+      "raw": {
+        "path": "data/raw/yahoo/etf-research-v1/development/QQQ.json",
+        "sha256": "67a0efdde2582490d5b87a86b91b8e5d66ebf92942e269520486632d65309916",
+        "bytes": 138823
+      },
+      "derived": {
+        "path": "data/derived/etf-research-v1/development/QQQ.csv",
+        "sha256": "fbf83b85e5094b5f3a320a730247d519b3517605fed9c951ce39fea92f06a32e",
+        "bytes": 136672
+      },
+      "quality": {
+        "expected_rows": 1258,
+        "actual_rows": 1258,
+        "unique_dates": 1258,
+        "missing_date_count": 0,
+        "unexpected_date_count": 0,
+        "duplicate_date_count": 0,
+        "extra_duplicate_rows": 0,
+        "out_of_order_pairs": 0,
+        "missing_values": {
+          "open": 0,
+          "high": 0,
+          "low": 0,
+          "close": 0,
+          "adj_close": 0,
+          "volume": 0
+        },
+        "invalid_values": {
+          "open": 0,
+          "high": 0,
+          "low": 0,
+          "close": 0,
+          "adj_close": 0,
+          "volume": 0
+        },
+        "passed": true,
+        "ohlc_order_failures": 0
+      }
+    },
+    {
+      "symbol": "SPY",
+      "partition": "final_test",
+      "requested_bounds": {
+        "start": "2025-01-01",
+        "end": "2025-12-31"
+      },
+      "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/SPY?period1=1735707600&period2=1767243600&interval=1d&events=div%2Csplits%2CcapitalGains&includePrePost=false&includeAdjustedClose=true",
+      "downloaded_at_utc": "2026-11-14T06:35:37.878892+00:00",
+      "raw": {
+        "path": "data/sealed/etf-research-v1/raw/SPY.json",
+        "sha256": "98e48b3e27a209e9f3e92366130ee0f19ef2f1778a378d11dec3729dcdcd8703",
+        "bytes": 28088
+      },
+      "derived": {
+        "path": "data/sealed/etf-research-v1/SPY.csv",
+        "sha256": "a98fb9ca4cc30b54cad7663484d76d3ceed0d03bf91f88d30de239130f8768cb",
+        "bytes": 26684
+      },
+      "quality": {
+        "expected_rows": 250,
+        "actual_rows": 250,
+        "unique_dates": 250,
+        "missing_date_count": 0,
+        "unexpected_date_count": 0,
+        "duplicate_date_count": 0,
+        "extra_duplicate_rows": 0,
+        "out_of_order_pairs": 0,
+        "missing_values": {
+          "open": 0,
+          "high": 0,
+          "low": 0,
+          "close": 0,
+          "adj_close": 0,
+          "volume": 0
+        },
+        "invalid_values": {
+          "open": 0,
+          "high": 0,
+          "low": 0,
+          "close": 0,
+          "adj_close": 0,
+          "volume": 0
+        },
+        "passed": true,
+        "ohlc_order_failures": 0
+      }
+    },
+    {
+      "symbol": "DIA",
+      "partition": "final_test",
+      "requested_bounds": {
+        "start": "2025-01-01",
+        "end": "2025-12-31"
+      },
+      "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/DIA?period1=1735707600&period2=1767243600&interval=1d&events=div%2Csplits%2CcapitalGains&includePrePost=false&includeAdjustedClose=true",
+      "downloaded_at_utc": "2026-11-14T06:35:39.403271+00:00",
+      "raw": {
+        "path": "data/sealed/etf-research-v1/raw/DIA.json",
+        "sha256": "ba00f84976c74565162584e31a8ad866049defac6e935a4f29511bfc86da4763",
+        "bytes": 28813
+      },
+      "derived": {
+        "path": "data/sealed/etf-research-v1/DIA.csv",
+        "sha256": "dc6596cae1150c7f3c1bcc61d852f073c8d4dbe5aa5614f2cd35844af3809f5e",
+        "bytes": 27007
+      },
+      "quality": {
+        "expected_rows": 250,
+        "actual_rows": 250,
+        "unique_dates": 250,
+        "missing_date_count": 0,
+        "unexpected_date_count": 0,
+        "duplicate_date_count": 0,
+        "extra_duplicate_rows": 0,
+        "out_of_order_pairs": 0,
+        "missing_values": {
+          "open": 0,
+          "high": 0,
+          "low": 0,
+          "close": 0,
+          "adj_close": 0,
+          "volume": 0
+        },
+        "invalid_values": {
+          "open": 0,
+          "high": 0,
+          "low": 0,
+          "close": 0,
+          "adj_close": 0,
+          "volume": 0
+        },
+        "passed": true,
+        "ohlc_order_failures": 0
+      }
+    },
+    {
+      "symbol": "QQQ",
+      "partition": "final_test",
+      "requested_bounds": {
+        "start": "2025-01-01",
+        "end": "2025-12-31"
+      },
+      "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/QQQ?period1=1735707600&period2=1767243600&interval=1d&events=div%2Csplits%2CcapitalGains&includePrePost=false&includeAdjustedClose=true",
+      "downloaded_at_utc": "2026-11-14T06:35:40.827387+00:00",
+      "raw": {
+        "path": "data/sealed/etf-research-v1/raw/QQQ.json",
+        "sha256": "157c7a282f9dfb201476ae08af7cce06c8ceee0fc5ccc51ef2ec55681e51d593",
+        "bytes": 28179
+      },
+      "derived": {
+        "path": "data/sealed/etf-research-v1/QQQ.csv",
+        "sha256": "1fd155d5ca8c18c78ef396ae7f91ba31641e1b56892cb66c62b928c998146c1e",
+        "bytes": 26796
+      },
+      "quality": {
+        "expected_rows": 250,
+        "actual_rows": 250,
+        "unique_dates": 250,
+        "missing_date_count": 0,
+        "unexpected_date_count": 0,
+        "duplicate_date_count": 0,
+        "extra_duplicate_rows": 0,
+        "out_of_order_pairs": 0,
+        "missing_values": {
+          "open": 0,
+          "high": 0,
+          "low": 0,
+          "close": 0,
+          "adj_close": 0,
+          "volume": 0
+        },
+        "invalid_values": {
+          "open": 0,
+          "high": 0,
+          "low": 0,
+          "close": 0,
+          "adj_close": 0,
+          "volume": 0
+        },
+        "passed": true,
+        "ohlc_order_failures": 0
+      }
+    }
+  ],
+  "supporting_files": [
+    {
+      "path": "configs/etf-research-v1.json",
+      "sha256": "de363c4ffa4db203b43d4b0b9e17d86bf72e9b2b8a08af9ce0ec68b72276ca1a",
+      "bytes": 2257
+    },
+    {
+      "path": "configs/nyse-dates-2020-2025.json",
+      "sha256": "8eaf98d8ab95b99fbb71d2e75b79b7fa6328aad4e9350d0f6460dc9e98bfedac",
+      "bytes": 2013
+    },
+    {
+      "path": "reports/etf-research-v1/pre-download-decision.json",
+      "sha256": "03621be09427eeea699dfc9260d4e29d54d5a3f15aa2c5b20cca82dd9a1cbab8",
+      "bytes": 2837
+    },
+    {
+      "path": "src/prepare_etf_research.py",
+      "sha256": "a79fbb868cd1632c5dbd04facdb0341c69ef52451fb4b41edc6dd33225102003",
+      "bytes": 10314
+    },
+    {
+      "path": "src/check_data_quality.py",
+      "sha256": "e427f818bf7b05c260faeef76ce513b254b66d18143b2e41877d0100b99a8e3c",
+      "bytes": 4135
+    }
+  ],
+  "recorded_at_utc": "2026-11-14T06:35:40.852789+00:00"
+}

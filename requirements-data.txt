@@ -1,0 +1,3 @@
+# W07D04 date conversion on Windows; tested with bundled Python 3.12.14.
+# No dataframe or broker dependency is required.
+tzdata==2026.6

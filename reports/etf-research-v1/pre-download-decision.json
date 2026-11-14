@@ -1,0 +1,59 @@
+{
+  "recorded_at_utc": "2026-11-14T06:35:30.483279+00:00",
+  "plan": {
+    "path": "configs/etf-research-v1.json",
+    "sha256": "de363c4ffa4db203b43d4b0b9e17d86bf72e9b2b8a08af9ce0ec68b72276ca1a",
+    "bytes": 2257
+  },
+  "calendar": {
+    "path": "configs/nyse-dates-2020-2025.json",
+    "sha256": "8eaf98d8ab95b99fbb71d2e75b79b7fa6328aad4e9350d0f6460dc9e98bfedac",
+    "bytes": 2013
+  },
+  "plan_content": {
+    "study_id": "etf-research-v1",
+    "decision_date": "2026-11-14",
+    "symbols": [
+      "SPY",
+      "DIA",
+      "QQQ"
+    ],
+    "selection": "User selected symbols; teacher selected source and complete calendar-year boundaries before downloading research windows, without return-based selection.",
+    "source": "Yahoo Finance public daily chart JSON; no account or key used; not a guaranteed public API",
+    "interval": "1d",
+    "timezone": "America/New_York",
+    "currency": "USD",
+    "development": {
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    "final_test": {
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    },
+    "calendar_file": "configs/nyse-dates-2020-2025.json",
+    "allowed_test_checks": [
+      "schema",
+      "symbol/currency/timezone",
+      "date coverage against reference calendar",
+      "duplicates",
+      "nulls",
+      "finite positive prices",
+      "nonnegative integer volume",
+      "OHLC order",
+      "file hashes"
+    ],
+    "test_release": "W21, after W16 strategy and evaluation protocol freeze; one final historical evaluation; failure must be retained.",
+    "default_research_input": "data/derived/etf-research-v1/development/",
+    "test_directory": "data/sealed/etf-research-v1/",
+    "prior_exposure": "SPY NAV 2024-01-02..08 and some recent issuer rows already viewed; a SPY January 2024 API probe reported only schema and counts. These are outside the 2025 holdout. General historical market knowledge and prior model/user exposure cannot be erased or certified absent.",
+    "limits": [
+      "Research snapshot is a current provider revision, not point-in-time historical availability.",
+      "Close is split-adjusted; adj_close also reflects distributions. Neither is an execution quote or NAV.",
+      "Adjustment factors may reflect events after a bar or after a partition; do not use absolute adjusted levels as point-in-time features. Later strategy work must specify permitted returns and action handling.",
+      "No return calculations, plots, ranking, strategy selection or threshold fitting on final_test before release.",
+      "A hash detects changed content, not prior viewing; this is a procedural seal, not encryption or a guarantee of statistical independence.",
+      "Market data remains local and ignored by git; metadata, code and source references are reproducible records, not a redistribution license."
+    ]
+  }
+}
