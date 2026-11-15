@@ -22,3 +22,7 @@ venv/
 /data/derived/*
 !/data/derived/spy_nav_2024-01-02_2024-01-08.csv
 !/data/derived/spy_nav_2024-01-02_2024-01-08.metadata.json
+
+# 真实开发数据派生的参考曲线和运行结果仅保留本地。
+/reports/buy-hold-baseline-v1/runs/
+/reports/buy-hold-baseline-v2/runs/

@@ -1,0 +1,27 @@
+{
+  "study_id": "etf-development-v2",
+  "parent_study": "etf-research-v1",
+  "authorization_date": "2026-11-15",
+  "authorization": "User: 按原范围另建新快照",
+  "reason": "Original development CSV and raw files are absent in this working copy. Create an independent current-vintage snapshot; do not replace the original manifest.",
+  "symbols": ["SPY", "DIA", "QQQ"],
+  "development": {"start": "2020-01-01", "end": "2024-12-31"},
+  "interval": "1d",
+  "timezone": "America/New_York",
+  "currency": "USD",
+  "source": "Yahoo Finance public daily chart JSON; same source family as v1; endpoint availability is not guaranteed.",
+  "calendar_file": "configs/nyse-dates-2020-2025.json",
+  "original_manifest": "reports/etf-research-v1/manifest.json",
+  "source_help": "https://help.yahoo.com/kb/SLN28256.html",
+  "source_help_verified": "2026-11-15 via official search result; regional help direct open returned HTTP 429",
+  "final_test_download": false,
+  "final_test_read": false,
+  "limits": [
+    "Only the authorized 2020-2024 development bars are requested and parsed. No final-test recovery or release.",
+    "Save the complete raw response but do not inspect unrelated recent quote metadata or use it for research.",
+    "Current-vintage provider adjusted prices, not point-in-time history or actual execution quotes.",
+    "No filling, sorting, dropping rows, or return-based selection; failures are retained.",
+    "QQQ uses the original declared NYSE date reference; full independent Nasdaq historical equivalence remains uncertified.",
+    "Data stays local and ignored by git; no redistribution claim."
+  ]
+}

@@ -1,3 +1,22 @@
 # 数据快照保留原始字节，避免跨平台换行转换改变 SHA-256 校验值。
 data/**/*.csv -text
 data/**/*.xlsx -text
+
+# 封存清单登记过的支持文件使用原始 LF，防止 checkout 改变哈希。
+/configs/etf-research-v1.json text eol=lf
+/configs/nyse-dates-2020-2025.json text eol=lf
+/reports/etf-research-v1/pre-download-decision.json text eol=lf
+/src/prepare_etf_research.py text eol=lf
+/src/check_data_quality.py text eol=lf
+
+# 新开发快照及其运行也记录支持文件哈希。
+/configs/etf-development-v2.json text eol=lf
+/configs/buy-hold-baseline-v2.json text eol=lf
+/src/refresh_etf_development.py text eol=lf
+/src/buy_hold_baseline.py text eol=lf
+/tests/test_refresh_etf_development.py text eol=lf
+/tests/test_buy_hold_baseline.py text eol=lf
+/reports/etf-development-v2/**/*.json text eol=lf
+# 这两个既有文件以当前 CRLF 字节登记在 v2 清单，保持其原有格式。
+/requirements-data.txt text eol=crlf
+/reports/etf-research-v1/manifest.json text eol=crlf

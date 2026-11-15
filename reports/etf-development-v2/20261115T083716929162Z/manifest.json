@@ -1,0 +1,261 @@
+{
+  "study_id": "etf-development-v2",
+  "snapshot_id": "20261115T083716929162Z",
+  "status": "ready",
+  "started_at_utc": "2026-11-15T08:37:16.929909+00:00",
+  "plan": {
+    "study_id": "etf-development-v2",
+    "parent_study": "etf-research-v1",
+    "authorization_date": "2026-11-15",
+    "authorization": "User: 按原范围另建新快照",
+    "reason": "Original development CSV and raw files are absent in this working copy. Create an independent current-vintage snapshot; do not replace the original manifest.",
+    "symbols": [
+      "SPY",
+      "DIA",
+      "QQQ"
+    ],
+    "development": {
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    "interval": "1d",
+    "timezone": "America/New_York",
+    "currency": "USD",
+    "source": "Yahoo Finance public daily chart JSON; same source family as v1; endpoint availability is not guaranteed.",
+    "calendar_file": "configs/nyse-dates-2020-2025.json",
+    "original_manifest": "reports/etf-research-v1/manifest.json",
+    "source_help": "https://help.yahoo.com/kb/SLN28256.html",
+    "source_help_verified": "2026-11-15 via official search result; regional help direct open returned HTTP 429",
+    "final_test_download": false,
+    "final_test_read": false,
+    "limits": [
+      "Only the authorized 2020-2024 development bars are requested and parsed. No final-test recovery or release.",
+      "Save the complete raw response but do not inspect unrelated recent quote metadata or use it for research.",
+      "Current-vintage provider adjusted prices, not point-in-time history or actual execution quotes.",
+      "No filling, sorting, dropping rows, or return-based selection; failures are retained.",
+      "QQQ uses the original declared NYSE date reference; full independent Nasdaq historical equivalence remains uncertified.",
+      "Data stays local and ignored by git; no redistribution claim."
+    ]
+  },
+  "python_version": "3.14.6",
+  "tzdata_version": "2026.6",
+  "supporting_files": [
+    {
+      "path": "configs/etf-development-v2.json",
+      "sha256": "77bfbe7dfc2ffa6ff828a99c37a4a7c07a3ec859b0412143d35f04a120ae0f8d",
+      "bytes": 1628
+    },
+    {
+      "path": "configs/buy-hold-baseline-v2.json",
+      "sha256": "f15c821b74f242c8b48a330ccc2803fe83c0428cc748ddc30618ccf8c72fbf07",
+      "bytes": 1811
+    },
+    {
+      "path": "configs/etf-research-v1.json",
+      "sha256": "de363c4ffa4db203b43d4b0b9e17d86bf72e9b2b8a08af9ce0ec68b72276ca1a",
+      "bytes": 2257
+    },
+    {
+      "path": "configs/nyse-dates-2020-2025.json",
+      "sha256": "8eaf98d8ab95b99fbb71d2e75b79b7fa6328aad4e9350d0f6460dc9e98bfedac",
+      "bytes": 2013
+    },
+    {
+      "path": "reports/etf-research-v1/manifest.json",
+      "sha256": "3a6e49f571841a2771404d018a79e32ee569242c702df79f8fbe55abc4f5a10a",
+      "bytes": 10590
+    },
+    {
+      "path": "src/refresh_etf_development.py",
+      "sha256": "f8987bdcbe2eace5809a178201d86b68b3982e44346e205ff3fc9de49a78fdc7",
+      "bytes": 12475
+    },
+    {
+      "path": "src/prepare_etf_research.py",
+      "sha256": "a79fbb868cd1632c5dbd04facdb0341c69ef52451fb4b41edc6dd33225102003",
+      "bytes": 10314
+    },
+    {
+      "path": "src/check_data_quality.py",
+      "sha256": "e427f818bf7b05c260faeef76ce513b254b66d18143b2e41877d0100b99a8e3c",
+      "bytes": 4135
+    },
+    {
+      "path": "src/buy_hold_baseline.py",
+      "sha256": "b32cafafe59d4eda3cbf960fd31d6c376461cf1d35d067dbe41d29088c77cbd1",
+      "bytes": 11247
+    },
+    {
+      "path": "tests/test_refresh_etf_development.py",
+      "sha256": "1b926068b5e88718b9d096e73f4406d689914ee1b371394d0388902bc172c1d6",
+      "bytes": 7986
+    },
+    {
+      "path": "tests/test_buy_hold_baseline.py",
+      "sha256": "86d2135e40575962793bb8209603d839374e647b614b1eaa04b1f699b287e582",
+      "bytes": 6537
+    },
+    {
+      "path": "requirements-data.txt",
+      "sha256": "eca190a9921bee99c9507dba64628d38510ea9f25c252d775301d42f9dfc85ca",
+      "bytes": 140
+    }
+  ],
+  "pre_download": {
+    "path": "reports/etf-development-v2/20261115T083716929162Z/pre-download-decision.json",
+    "sha256": "d11e4d4231a03d2b14e328a3aea41031c8d8ccef0ee119c5f6c20ea10234e1e0",
+    "bytes": 5837
+  },
+  "snapshots": [
+    {
+      "symbol": "SPY",
+      "partition": "development",
+      "requested_bounds": {
+        "start": "2020-01-01",
+        "end": "2024-12-31"
+      },
+      "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/SPY?period1=1577854800&period2=1735707600&interval=1d&events=div%2Csplits%2CcapitalGains&includePrePost=false&includeAdjustedClose=true",
+      "downloaded_at_utc": "2026-11-15T08:37:18.656210+00:00",
+      "raw": {
+        "path": "data/raw/yahoo/etf-development-v2/20261115T083716929162Z/development/SPY.json",
+        "sha256": "09d39a5f66e8769e2e48c2ccb981e03bbc3e974994c76dbd19237e3d5ffc1164",
+        "bytes": 138758
+      },
+      "derived": {
+        "path": "data/derived/etf-development-v2/20261115T083716929162Z/development/SPY.csv",
+        "sha256": "3d205c04ee2cd643b02167c62daaacf977e281f2403c0967f769a99a3d4ed4b6",
+        "bytes": 136587
+      },
+      "quality": {
+        "expected_rows": 1258,
+        "actual_rows": 1258,
+        "unique_dates": 1258,
+        "missing_date_count": 0,
+        "unexpected_date_count": 0,
+        "duplicate_date_count": 0,
+        "extra_duplicate_rows": 0,
+        "out_of_order_pairs": 0,
+        "missing_values": {
+          "open": 0,
+          "high": 0,
+          "low": 0,
+          "close": 0,
+          "adj_close": 0,
+          "volume": 0
+        },
+        "invalid_values": {
+          "open": 0,
+          "high": 0,
+          "low": 0,
+          "close": 0,
+          "adj_close": 0,
+          "volume": 0
+        },
+        "passed": true,
+        "ohlc_order_failures": 0
+      },
+      "matches_original_derived_hash": false
+    },
+    {
+      "symbol": "DIA",
+      "partition": "development",
+      "requested_bounds": {
+        "start": "2020-01-01",
+        "end": "2024-12-31"
+      },
+      "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/DIA?period1=1577854800&period2=1735707600&interval=1d&events=div%2Csplits%2CcapitalGains&includePrePost=false&includeAdjustedClose=true",
+      "downloaded_at_utc": "2026-11-15T08:37:20.306537+00:00",
+      "raw": {
+        "path": "data/raw/yahoo/etf-development-v2/20261115T083716929162Z/development/DIA.json",
+        "sha256": "6ce8a60e358add46ad76389d2e53d935ccc9094ed4888100defbc4f0eae5d4c0",
+        "bytes": 139453
+      },
+      "derived": {
+        "path": "data/derived/etf-development-v2/20261115T083716929162Z/development/DIA.csv",
+        "sha256": "fcd0f800eeae7d558eb267f3ace1a822fd26c0730795f156c3acd42eb803bb95",
+        "bytes": 135347
+      },
+      "quality": {
+        "expected_rows": 1258,
+        "actual_rows": 1258,
+        "unique_dates": 1258,
+        "missing_date_count": 0,
+        "unexpected_date_count": 0,
+        "duplicate_date_count": 0,
+        "extra_duplicate_rows": 0,
+        "out_of_order_pairs": 0,
+        "missing_values": {
+          "open": 0,
+          "high": 0,
+          "low": 0,
+          "close": 0,
+          "adj_close": 0,
+          "volume": 0
+        },
+        "invalid_values": {
+          "open": 0,
+          "high": 0,
+          "low": 0,
+          "close": 0,
+          "adj_close": 0,
+          "volume": 0
+        },
+        "passed": true,
+        "ohlc_order_failures": 0
+      },
+      "matches_original_derived_hash": false
+    },
+    {
+      "symbol": "QQQ",
+      "partition": "development",
+      "requested_bounds": {
+        "start": "2020-01-01",
+        "end": "2024-12-31"
+      },
+      "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/QQQ?period1=1577854800&period2=1735707600&interval=1d&events=div%2Csplits%2CcapitalGains&includePrePost=false&includeAdjustedClose=true",
+      "downloaded_at_utc": "2026-11-15T08:37:22.024869+00:00",
+      "raw": {
+        "path": "data/raw/yahoo/etf-development-v2/20261115T083716929162Z/development/QQQ.json",
+        "sha256": "4d0ee156e222c4b7d5cf3c77ac676e69f9e89961d5fcc12140c0aa2ae55d85b3",
+        "bytes": 138908
+      },
+      "derived": {
+        "path": "data/derived/etf-development-v2/20261115T083716929162Z/development/QQQ.csv",
+        "sha256": "9452120ad25750db1f6d2a2dfaf60e3cfb2a4a0645036890dfa7274384fde8ae",
+        "bytes": 136757
+      },
+      "quality": {
+        "expected_rows": 1258,
+        "actual_rows": 1258,
+        "unique_dates": 1258,
+        "missing_date_count": 0,
+        "unexpected_date_count": 0,
+        "duplicate_date_count": 0,
+        "extra_duplicate_rows": 0,
+        "out_of_order_pairs": 0,
+        "missing_values": {
+          "open": 0,
+          "high": 0,
+          "low": 0,
+          "close": 0,
+          "adj_close": 0,
+          "volume": 0
+        },
+        "invalid_values": {
+          "open": 0,
+          "high": 0,
+          "low": 0,
+          "close": 0,
+          "adj_close": 0,
+          "volume": 0
+        },
+        "passed": true,
+        "ohlc_order_failures": 0
+      },
+      "matches_original_derived_hash": false
+    }
+  ],
+  "final_test_requested": false,
+  "final_test_read": false,
+  "recorded_at_utc": "2026-11-15T08:37:22.043790+00:00"
+}
