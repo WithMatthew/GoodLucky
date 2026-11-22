@@ -10,6 +10,7 @@ venv/
 /data/synthetic/*
 !/data/synthetic/README.md
 !/data/synthetic/daily_demo.csv
+!/data/synthetic/mlf_stock_month.csv
 
 # SPY 教学快照：原始文件、衍生样本和来源元数据一起同步。
 # 必须逐层放行父目录，否则 Git 不会检查目录内的文件例外。
