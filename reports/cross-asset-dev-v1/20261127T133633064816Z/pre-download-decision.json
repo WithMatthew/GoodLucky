@@ -1,0 +1,73 @@
+{
+  "recorded_at_utc": "2026-11-27T13:36:33.065436+00:00",
+  "snapshot_id": "20261127T133633064816Z",
+  "plan": {
+    "study_id": "cross-asset-dev-v1",
+    "authorization_date": "2026-11-27",
+    "authorization": "Learning plan v2.1 W11D02: acquire 2007-06-01..2024-12-31 development data; 2025 stays sealed",
+    "symbols": [
+      "SPY",
+      "QQQ",
+      "EFA",
+      "TLT",
+      "IEF",
+      "GLD",
+      "BIL"
+    ],
+    "development": {
+      "start": "2007-06-01",
+      "end": "2024-12-31"
+    },
+    "interval": "1d",
+    "timezone": "America/New_York",
+    "currency": "USD",
+    "price_source": "Yahoo Finance public daily chart JSON (unofficial endpoint, availability not guaranteed)",
+    "price_source_help": "https://help.yahoo.com/kb/SLN28256.html",
+    "rf_source": "Kenneth R. French Data Library three-factor files, column RF. Research RF = MONTHLY file split into daily by trading days in month; daily file kept only for precision comparison.",
+    "rf_source_url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/F-F_Research_Data_Factors_daily_CSV.zip",
+    "rf_definition_url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/Data_Library/f-f_factors.html",
+    "rf_definition_verified": "2026-11-27: one-month Treasury bill rate; Ibbotson Associates through 2024-05, ICE BofA US 1-Month Treasury Bill Index from 2024-06",
+    "rf_units": "source files are percent per period; derived CSVs store decimal per period",
+    "fred_dtb3_status": "2026-11-27 fredgraph.csv timed out twice (20s, 60s); not used",
+    "final_test_download": false,
+    "final_test_read": false,
+    "limits": [
+      "Yahoo requests are bounded to the development window; parser rejects any bar outside it.",
+      "The Ken French zip is a whole-file download that also contains post-2024 rows; only rows inside the development window are parsed, nothing after 2024-12-31 is read into research or printed.",
+      "adj_close is the provider's current-vintage split+distribution adjusted series, not point-in-time history or executable quotes.",
+      "No filling, sorting, row dropping or return-based selection at download time; quality issues are flagged, not silently fixed.",
+      "Data stays local and ignored by git."
+    ],
+    "rf_monthly_source_url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/F-F_Research_Data_Factors_CSV.zip",
+    "rf_precision_finding": "2026-11-27 snapshot 20261127T133237917824Z: daily file RF has 2 decimals in percent (0.01%/day ~ 2.5%/yr steps); only 3 distinct values 2007-2024, 2009-2017 rounds to 0. Monthly file resolution 0.01%/month ~ 0.12%/yr."
+  },
+  "supporting_files": [
+    {
+      "path": "configs/cross-asset-dev-v1.json",
+      "sha256": "00a80dcfb98b58f110cd64042ebec07cac505ca534539e5cdd3798e2aa219a22",
+      "bytes": 2442
+    },
+    {
+      "path": "src/cross_asset_data.py",
+      "sha256": "79c25d0112d3060e40800f1a6250150a856d19bed287808989a96560db33c0f1",
+      "bytes": 11084
+    },
+    {
+      "path": "src/prepare_etf_research.py",
+      "sha256": "a79fbb868cd1632c5dbd04facdb0341c69ef52451fb4b41edc6dd33225102003",
+      "bytes": 10314
+    },
+    {
+      "path": "src/check_data_quality.py",
+      "sha256": "e427f818bf7b05c260faeef76ce513b254b66d18143b2e41877d0100b99a8e3c",
+      "bytes": 4135
+    },
+    {
+      "path": "requirements-research.txt",
+      "sha256": "68ff3123b6b3dc4b5b9fb6cb90b8ea56e5932dc09d0ab3432efca42f015702dd",
+      "bytes": 334
+    }
+  ],
+  "recorded_before_download": true,
+  "final_test_requested": false
+}

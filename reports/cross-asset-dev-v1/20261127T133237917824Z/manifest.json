@@ -1,0 +1,171 @@
+{
+  "study_id": "cross-asset-dev-v1",
+  "snapshot_id": "20261127T133237917824Z",
+  "status": "ready",
+  "started_at_utc": "2026-11-27T13:32:37.923256+00:00",
+  "python_version": "3.14.6",
+  "pandas_version": "3.1.1",
+  "tzdata_version": "2026.6",
+  "pre_download": {
+    "path": "reports/cross-asset-dev-v1/20261127T133237917824Z/pre-download-decision.json",
+    "sha256": "e386144f5ff300fdf60f01d9b63d7a6f1f54d901747b1d6f92d94811f565408a",
+    "bytes": 3058
+  },
+  "files": [
+    {
+      "kind": "price",
+      "symbol": "SPY",
+      "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/SPY?period1=1180670400&period2=1735707600&interval=1d&events=div%2Csplits%2CcapitalGains&includePrePost=false&includeAdjustedClose=true",
+      "downloaded_at_utc": "2026-11-27T13:32:39.918376+00:00",
+      "raw": {
+        "path": "data/raw/cross-asset-dev-v1/20261127T133237917824Z/SPY.json",
+        "sha256": "ce40498d12c9a7e2187bd9b6f65a4797c8b6d94ee7e037440d2a0c67b11266a2",
+        "bytes": 492617
+      },
+      "derived": {
+        "path": "data/derived/cross-asset-dev-v1/20261127T133237917824Z/SPY.csv",
+        "sha256": "17525960e6854fc8a20d6d297417f711fb208182f02689753048c792a509c6a4",
+        "bytes": 488007
+      },
+      "rows": 4427,
+      "first_date": "2007-06-01",
+      "last_date": "2024-12-31"
+    },
+    {
+      "kind": "price",
+      "symbol": "QQQ",
+      "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/QQQ?period1=1180670400&period2=1735707600&interval=1d&events=div%2Csplits%2CcapitalGains&includePrePost=false&includeAdjustedClose=true",
+      "downloaded_at_utc": "2026-11-27T13:32:41.990451+00:00",
+      "raw": {
+        "path": "data/raw/cross-asset-dev-v1/20261127T133237917824Z/QQQ.json",
+        "sha256": "7f03a27bace0d8723f73c635c2b927a2972a26911d0f5980c8de726d879cd05f",
+        "bytes": 489911
+      },
+      "derived": {
+        "path": "data/derived/cross-asset-dev-v1/20261127T133237917824Z/QQQ.csv",
+        "sha256": "593090b38db82c06709a812bfb8b0ccebcc0cc7290dba57ce3b8a5e4d37720a3",
+        "bytes": 485177
+      },
+      "rows": 4427,
+      "first_date": "2007-06-01",
+      "last_date": "2024-12-31"
+    },
+    {
+      "kind": "price",
+      "symbol": "EFA",
+      "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/EFA?period1=1180670400&period2=1735707600&interval=1d&events=div%2Csplits%2CcapitalGains&includePrePost=false&includeAdjustedClose=true",
+      "downloaded_at_utc": "2026-11-27T13:32:43.939552+00:00",
+      "raw": {
+        "path": "data/raw/cross-asset-dev-v1/20261127T133237917824Z/EFA.json",
+        "sha256": "519a05e6b0983ab1a32756a7c8367c5a8fbc44a6598f75bd338aa99f1902d7d5",
+        "bytes": 482003
+      },
+      "derived": {
+        "path": "data/derived/cross-asset-dev-v1/20261127T133237917824Z/EFA.csv",
+        "sha256": "5d99310772d6e00b1762c87311c4d2cdc4317cdbe6d4193d214951cf56ba19b7",
+        "bytes": 479087
+      },
+      "rows": 4427,
+      "first_date": "2007-06-01",
+      "last_date": "2024-12-31"
+    },
+    {
+      "kind": "price",
+      "symbol": "TLT",
+      "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/TLT?period1=1180670400&period2=1735707600&interval=1d&events=div%2Csplits%2CcapitalGains&includePrePost=false&includeAdjustedClose=true",
+      "downloaded_at_utc": "2026-11-27T13:32:45.917329+00:00",
+      "raw": {
+        "path": "data/raw/cross-asset-dev-v1/20261127T133237917824Z/TLT.json",
+        "sha256": "c1bed854d826daf7d5106ff8e9e614a459d8de980781e32942f2bc865e254535",
+        "bytes": 495147
+      },
+      "derived": {
+        "path": "data/derived/cross-asset-dev-v1/20261127T133237917824Z/TLT.csv",
+        "sha256": "858a7bfc087e32179cbdc9a36ac592d83611e43b1ba83550f66738d8ba2dbac1",
+        "bytes": 483850
+      },
+      "rows": 4427,
+      "first_date": "2007-06-01",
+      "last_date": "2024-12-31"
+    },
+    {
+      "kind": "price",
+      "symbol": "IEF",
+      "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/IEF?period1=1180670400&period2=1735707600&interval=1d&events=div%2Csplits%2CcapitalGains&includePrePost=false&includeAdjustedClose=true",
+      "downloaded_at_utc": "2026-11-27T13:32:48.041479+00:00",
+      "raw": {
+        "path": "data/raw/cross-asset-dev-v1/20261127T133237917824Z/IEF.json",
+        "sha256": "baec8d15166a54e8ff8e594fa3419eac79175ba2c1a407b24fe0d0ccffe68910",
+        "bytes": 490439
+      },
+      "derived": {
+        "path": "data/derived/cross-asset-dev-v1/20261127T133237917824Z/IEF.csv",
+        "sha256": "833dcd88af0c93d415b399bc82f6db0d5a91319388f9757897f6226ecb0edede",
+        "bytes": 479094
+      },
+      "rows": 4427,
+      "first_date": "2007-06-01",
+      "last_date": "2024-12-31"
+    },
+    {
+      "kind": "price",
+      "symbol": "GLD",
+      "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/GLD?period1=1180670400&period2=1735707600&interval=1d&events=div%2Csplits%2CcapitalGains&includePrePost=false&includeAdjustedClose=true",
+      "downloaded_at_utc": "2026-11-27T13:32:49.999217+00:00",
+      "raw": {
+        "path": "data/raw/cross-asset-dev-v1/20261127T133237917824Z/GLD.json",
+        "sha256": "a8cf2e8d822452c825f956d6f6105730f65f552581cfff3db795d67c13ebd7dc",
+        "bytes": 486387
+      },
+      "derived": {
+        "path": "data/derived/cross-asset-dev-v1/20261127T133237917824Z/GLD.csv",
+        "sha256": "dbcf589e4d88e694e116a149a60fa04de47909575c0b93c94f0b938196cc39d5",
+        "bytes": 485238
+      },
+      "rows": 4427,
+      "first_date": "2007-06-01",
+      "last_date": "2024-12-31"
+    },
+    {
+      "kind": "price",
+      "symbol": "BIL",
+      "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/BIL?period1=1180670400&period2=1735707600&interval=1d&events=div%2Csplits%2CcapitalGains&includePrePost=false&includeAdjustedClose=true",
+      "downloaded_at_utc": "2026-11-27T13:32:51.891115+00:00",
+      "raw": {
+        "path": "data/raw/cross-asset-dev-v1/20261127T133237917824Z/BIL.json",
+        "sha256": "94d7abcfce217866d82f61c12ce186bd6e758dfc021adc6746d2560bd56a0dd0",
+        "bytes": 473317
+      },
+      "derived": {
+        "path": "data/derived/cross-asset-dev-v1/20261127T133237917824Z/BIL.csv",
+        "sha256": "1c5fd7984479d30d87bb0dcae9b5124123fedb4c37e5919dec815108db262e2b",
+        "bytes": 466878
+      },
+      "rows": 4427,
+      "first_date": "2007-06-01",
+      "last_date": "2024-12-31"
+    },
+    {
+      "kind": "rf",
+      "source_url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/F-F_Research_Data_Factors_daily_CSV.zip",
+      "downloaded_at_utc": "2026-11-27T13:32:53.751185+00:00",
+      "raw": {
+        "path": "data/raw/cross-asset-dev-v1/20261127T133237917824Z/F-F_Research_Data_Factors_daily_CSV.zip",
+        "sha256": "96c23b88e651cbfff3740a53f8225e59ee39893371e96385a1d8125ec2cd9c89",
+        "bytes": 178326
+      },
+      "note": "raw zip also covers post-2024 rows; only development rows parsed",
+      "derived": {
+        "path": "data/derived/cross-asset-dev-v1/20261127T133237917824Z/rf_daily.csv",
+        "sha256": "6dd70d9d99dce511c8809c639c72c4b585628645195c2ae856fca2ed33a49f94",
+        "bytes": 70946
+      },
+      "rows": 4427,
+      "first_date": "2007-06-01",
+      "last_date": "2024-12-31"
+    }
+  ],
+  "final_test_requested": false,
+  "final_test_read": false,
+  "recorded_at_utc": "2026-11-27T13:32:53.799727+00:00"
+}
