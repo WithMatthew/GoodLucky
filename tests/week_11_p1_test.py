@@ -22,3 +22,7 @@ print(ma3)
 
 gap = (close - ma3).rename("gap")
 print(gap)
+
+above = close > ma3
+target = above.astype(int).rename("target")
+print(target)
