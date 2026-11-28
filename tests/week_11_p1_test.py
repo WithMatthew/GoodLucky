@@ -26,3 +26,6 @@ print(gap)
 above = close > ma3
 target = above.astype(int).rename("target")
 print(target)
+
+position = target.shift(1).rename("position")
+print(position)

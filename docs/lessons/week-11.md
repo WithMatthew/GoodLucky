@@ -453,3 +453,51 @@ position = target.shift(1).rename('position')    # NaN, 0, 0, 1, 1
 1. `t = pd.Series([0, 0, 1, 0], index=['D1','D2','D3','D4'])`，`t.shift(1)` 的 4 个值？
 2. D4 那天实际持有几份？它来自哪一天收盘时的信号？
 3. 如果直接把 `t`（不做 shift）当成当天的持仓，等于说 D3 那天就已经持有 1 份了。可 D3 的信号要等 D3 收盘才知道，这有什么问题？
+
+**P4（下）小变式 ✅（2026-11-28）**：四问全对（`>=` 时 D4 目标为 1；NaN、0、0、1；D4 持有 1 份，来自 D3 收盘信号；不 shift 等于用当时还不知道的数据，结果失真）。补充术语：这种错误叫**前视偏差**（look-ahead bias）。例如 W10 原例里 D3 就算持有 1 份，会白赚 D2→D3 从 51 涨到 54 的那 3 美元，而这段涨幅要到 D3 收盘才知道。回测通常因此显得比实际更好。
+
+<a id="w11-p4b-formal"></a>
+**P4（下）正式小题（学习者自己写代码并运行）**：
+1. 接着你文件里 W10D05 的 `target`（0、0、1、1、0），算出 `position = target.shift(1).rename('position')` 并打印。
+2. 对照 W10D05 的开盘价表（D4 开盘 52、D6 开盘 50）：`position` 显示哪天开始持有 1 份？那天按什么价格买入？
+3. D5 收盘算出目标 0，这个卖出在哪天、按什么价格执行？为什么 `position` 里看不到这一天？
+
+**P4（下）正式小题 ✅（2026-11-28）**：`position` = NaN、0、0、1、1；D4 开盘按 52 买入；D5 收盘的卖出信号在 D6 开盘按 50 执行，`position` 只算到 D5，所以看不到。**P4 完成。**
+
+<a id="w11-p5"></a>
+### P5：`DataFrame`——把几列放进同一张账本表（2026-11-28）
+
+**用途**：P1–P4 我们算出了 `close`、`ma3`、`target`、`position` 四个 Series，标签都是 D1–D5。`DataFrame` 就是**共用同一组行标签的多列 Series**，像 W10 的逐日账本表一样一行一天、一列一个量。
+
+```python
+df = pd.DataFrame({'close': close})                     # 先用一列建表
+df['ma3'] = df['close'].rolling(3).mean()               # 加新列：直接赋值
+df['target'] = (df['close'] > df['ma3']).astype(int)
+df['position'] = df['target'].shift(1)
+print(df)
+```
+```
+    close   ma3  target  position
+D1     48   NaN       0       NaN
+D2     51   NaN       0       0.0
+D3     54  51.0       1       0.0
+D4     57  54.0       1       1.0
+D5     54  55.0       0       1.0
+```
+
+| 写法 | 含义 |
+| --- | --- |
+| `df['close']` | 取一列，得到的是 Series（P1–P4 学过的所有写法都能用） |
+| `df[['close', 'position']]` | 取多列，注意是**两层方括号**（里面一层是列名列表），得到的还是 DataFrame |
+| `df.loc['D4']` | 按行标签取一行（D4 这天的所有列） |
+| `df['新列'] = ...` | 加新列。这是**赋值语句**，会直接改变 `df`，和 `rename` 这类"返回新对象"的方法不同 |
+
+**P5 小变式（先预测、再运行核对）**：
+```python
+v = pd.DataFrame({'close': [10, 12, 14, 13]}, index=['D1', 'D2', 'D3', 'D4'])
+v['ma2'] = v['close'].rolling(2).mean()
+v['target'] = (v['close'] > v['ma2']).astype(int)
+```
+1. 运行后 `v` 有几列？写出 `ma2` 和 `target` 两列的 4 个值。
+2. `v.loc['D3']` 会显示哪些内容？
+3. 第 2 行没有写 `v = ...`，为什么 `v` 还是多出了 `ma2` 列？
