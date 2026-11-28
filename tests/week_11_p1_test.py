@@ -29,3 +29,10 @@ print(target)
 
 position = target.shift(1).rename("position")
 print(position)
+
+df = pd.DataFrame({"close": close})
+df["ma3"] = df["close"].rolling(3).mean()
+df["target"] = (df["close"] > df["ma3"]).astype(int)
+df["position"] = df["target"].shift(1).fillna(0)
+
+print(df["position"])
