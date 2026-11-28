@@ -384,3 +384,36 @@ ma3 = close.rolling(3).mean()   # NaN, NaN, 51.0, 54.0, 55.0
 1. `s.rolling(3).mean()` 的 4 个值？
 2. 改成 `s.rolling(2).mean()`，4 个值是多少？前面有几个 `NaN`？
 3. D4 的三日均线用到了哪几天的价格？
+
+**P3 小变式 ✅（2026-11-28）**：三问全对（NaN、NaN、12、13；NaN、11、13、13.5，开头 1 个 NaN；D4 用到 D2–D4）。
+
+<a id="w11-p3-formal"></a>
+**P3 正式小题（学习者自己写代码并运行）**：使用 W10D05 周验收的收盘价 D1–D5：45、48、51、54、51（美元/份）。
+1. 建出 `close`，算出三日均线 `ma3`，改名为 `'ma3'`。
+2. 算出 `gap = (close - ma3).rename('gap')`，表示每天收盘价比均线高多少（美元/份）。两个 Series 的标签相同，所以按同一天相减。
+3. 和你在 W10D05-A1 手算的均线 48、51、52 核对。`gap` 哪几天是正数，哪几天是 `NaN`？
+
+**P3 正式小题 ✅（2026-11-28）**：代码见 `tests/week_11_p1_test.py`。`ma3` = NaN、NaN、48、51、52，与 W10D05-A1 手算一致；`gap` = NaN、NaN、3、3、−1，正数日为 D3、D4，NaN 日为 D1、D2（D5 为 −1，收盘价低于均线）。**P3 完成。**
+
+<a id="w11-p4"></a>
+### P4（上）：用布尔比较生成目标份数（2026-11-28）
+
+P4 分两步：本节先讲"信号 → 目标份数"，下一节再讲 `shift(1)`（晚一天执行）。
+
+**用途**：W10 规则是"收盘价**严格高于**三日均线 → 目标 1 份；等于或低于 → 0 份"。`pandas` 里两个 Series 用 `>` 比较，会逐日得到 `True/False`（布尔值）。
+
+```python
+close = pd.Series([48, 51, 54, 57, 54], index=['D1','D2','D3','D4','D5'], name='close')
+ma3 = close.rolling(3).mean().rename('ma3')     # NaN, NaN, 51, 54, 55
+above = close > ma3                             # False, False, True, True, False
+target = above.astype(int).rename('target')     # 0, 0, 1, 1, 0
+```
+
+- `close > ma3`：按同一天比较，D5 的 54 > 55 不成立，得到 False。
+- `.astype(int)`：把 True 转成 1、False 转成 0，正好是目标份数。
+- **NaN 参与比较时一律得到 False**：D1、D2 均线还算不出，比较结果是 False，目标 0 份，和 W10"等待、不持有"一致。注意这是规则碰巧一致，以后遇到别的规则要单独确认。
+
+**P4（上）小变式（先预测、再运行核对）**：`s = pd.Series([10, 12, 14, 13], index=['D1','D2','D3','D4'])`，`m = s.rolling(3).mean()`（P3 已算：NaN、NaN、12、13）。
+1. `s > m` 的 4 个值？
+2. `(s > m).astype(int)` 的 4 个值？
+3. D4 为什么目标是 0？（提示：看 W10 规则里的"严格"二字）
