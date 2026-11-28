@@ -1,11 +1,12 @@
 import pandas as pd
 
-close = pd.Series(
-    [48, 51, 54, 57, 54], index=["D1", "D2", "D3", "D4", "D5"], name="close"
+total = pd.Series(
+    [100, 100, 100, 102, 99], index=["D1", "D2", "D3", "D4", "D5"], name="total"
 )
+r = total.pct_change().rename("r")
 
-total = close + 45
-print(total)
+nav = (1 + r).cumprod().rename("nav")
 
-D5_total = total.loc["D5"]
-print(D5_total)
+cum_ret = (nav - 1).rename("cum_ret")
+
+print(nav.loc["D5"], total.loc["D5"] / total.loc["D1"])
